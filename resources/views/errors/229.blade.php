@@ -1,6 +1,8 @@
+{{-- for block access permission --}}
+
 @extends('errors::layout')
 
-@section('title', __('Error 401'))
+@section('title', __('Error 229'))
 
 @section('error-content')
     <div class="flex-center position-ref full-height">
@@ -15,12 +17,13 @@
             </div>
 
             <div class="title">
-                <strong class="text-danger">401</strong>|<small class="text-danger"
-                    style="letter-spacing: 2px;">{{ strtoupper('Unauthorized') }}</small>
+                <strong class="text-danger">229</strong>|<small class="text-danger"
+                    style="letter-spacing: 2px;">{{ strtoupper('Abort Access') }}</small>
             </div>
 
             <div class="detail_content">
-                Access to this page or resource is denied!
+                Access to this page or resource is denied from server! <br>
+                Please contact the administrator or your system administrator for further assistance.
             </div>
 
             <br>

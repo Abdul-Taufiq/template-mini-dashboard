@@ -16,6 +16,10 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/error500', function () {
+    abort(229);
+});
+
 Route::get('hash/{id}', function () {
     return bcrypt('id');
 });
