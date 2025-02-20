@@ -76,12 +76,13 @@
                 <div class="container footer--flex">
                     <div class="footer-start">
                         <p> <?php echo date('Y'); ?> © Taufiq - <a href="#" target="_blank"
-                                rel="noopener noreferrer">dashboard.com</a></p>
+                                rel="noopener noreferrer">mini-dashboard.com</a></p>
                     </div>
                     <ul class="footer-end">
                         <li><a href="##">About</a></li>
                         <li><a href="##">Support</a></li>
-                        {{-- <li><a href="##">Puchase</a></li> --}}
+                        <li><a href="##">Puchase</a></li>
+                        <li>Version 1.0.0</li>
                     </ul>
                 </div>
             </footer>
