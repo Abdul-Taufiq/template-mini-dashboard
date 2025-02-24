@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <center>
                         <div class="rounded-circle"
-                            style="background-color: white; max-width: 200px; width: 200px; display: flex">
+                            style="background-color: rgb(184, 184, 184); max-width: 200px; width: 200px; display: flex;  border: 1px solid rgb(161, 161, 161);">
                             <img id="image"
                                 src="{{ Auth::user()->profile_image != null
                                     ? asset('images/profile_image/' . Auth::user()->profile_image)
