@@ -94,7 +94,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" id="simpan" class="btn btn-primary" wire:click="confirmUpdate">Update</button>
+                {{-- <button type="button" id="simpan" class="btn btn-primary" wire:click="confirmUpdate">Update</button> --}}
+                <button type="button" id="simpan" class="btn btn-primary">Update</button>
             </div>
         </form>
     </div>

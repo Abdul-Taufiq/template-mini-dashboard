@@ -42,10 +42,10 @@ class ProfilLivewire extends Component
 
 
     protected $listeners = ['updateProfile']; // 🔥 Listener untuk submit setelah konfirmasi
-    public function confirmUpdate()
-    {
-        $this->dispatch('triggerUpdate'); // 🚀 Memicu JavaScript konfirmasi
-    }
+    // public function confirmUpdate()
+    // {
+    //     $this->dispatch('triggerUpdate'); // 🚀 Memicu JavaScript konfirmasi
+    // }
 
 
     // rules

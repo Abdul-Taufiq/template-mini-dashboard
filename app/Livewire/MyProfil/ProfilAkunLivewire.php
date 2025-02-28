@@ -33,10 +33,10 @@ class ProfilAkunLivewire extends Component
     protected $listeners = ['updateProfileAkun']; // 🔥 Listener untuk submit setelah konfirmasi
 
     // untuk aksi confirmation update
-    public function confirmUpdateAkun()
-    {
-        $this->dispatch('triggerUpdateAkun'); // 🚀 Memicu JavaScript konfirmasi
-    }
+    // public function confirmUpdateAkun()
+    // {
+    //     $this->dispatch('triggerUpdateAkun'); // 🚀 Memicu JavaScript konfirmasi
+    // }
 
     protected function rules()
     {

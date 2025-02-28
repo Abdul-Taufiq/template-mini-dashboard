@@ -40,7 +40,7 @@
                                             ? asset('images/profile_image/' . Auth::user()->profile_image)
                                             : asset('template/img/avatar/avatar-illustrated-02.webp') }}"
                                             alt="Image Profile"
-                                            style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;">
+                                            style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;  border: 1px solid rgb(161, 161, 161)">
                                     </picture>
                                 </span>
                             </button>
