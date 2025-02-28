@@ -81,7 +81,12 @@ class ProfilLivewire extends Component
     // fungsi Update
     public function updateProfile()
     {
-        $this->validate(); // 🔥 Jalankan validasi sebelum menyimpan data
+        try {
+            $this->validate(); // 🔥 Jalankan validasi sebelum menyimpan data
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $this->dispatch('validationFailed'); // 🚀 Emit event jika validasi gagal
+            throw $e; // Pastikan error tetap muncul di UI Livewire
+        }
 
         $userDetail = UserDetail::where('user_id', $this->id_user)->first();
         $user = User::find($this->id_user);

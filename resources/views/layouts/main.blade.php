@@ -3,6 +3,15 @@
 
 
 <body>
+    {{-- loading screen --}}
+    <div id="loading-screen"
+        style="display: none; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; background: #000000bd;z-index: 9999; top: 0; left: 0;">
+        <div
+            style="display: flex; margin: auto; width: 100%; height: 100%; justify-content: center; align-items: center;">
+            <img style="width: 150px;" src="{{ asset('images/error_image/Loading Screen 2.gif') }}" alt="Loading...">
+        </div>
+    </div>
+
     <div class="layer"></div>
     <!-- ! Body -->
     <a class="skip-link sr-only" href="#skip-target">Skip to content</a>

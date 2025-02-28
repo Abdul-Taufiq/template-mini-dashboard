@@ -1,4 +1,5 @@
 // Save update data My data
+// 🔥 Tampilkan loading screen manual
 $("#simpan").on("click", function (e) {
     var $form = $("#quickForm");
     var inputRequired = $form.find("[required]");
@@ -38,12 +39,14 @@ $("#simpan").on("click", function (e) {
         cancelButtonText: "Batal",
     }).then((result) => {
         if (result.isConfirmed) {
+            $("#loading-screen").fadeIn(); // 🔥 Tampilkan loading screen manual
             Livewire.dispatch("updateProfile"); // 🔥 Emit langsung ke Livewire
         }
     });
 });
 
 // Save update data My Account
+// 🔥 Tampilkan loading screen dihandle yang global
 $("#simpanAkun").on("click", function (e) {
     e.preventDefault(); // Tambahkan ini untuk mencegah submit default dari tombol
 
@@ -91,4 +94,17 @@ $("#simpanAkun").on("click", function (e) {
             });
         }
     }
+});
+
+// 🔥 Ketika Livewire selesai menyimpan data, sembunyikan loading screen
+// ✅ Tambahkan event listener di Livewire untuk menutup loading jika validasi gagal
+Livewire.on("validationFailed", () => {
+    console.log("Validasi gagal, menutup loading screen.");
+    $("#loading-screen").fadeOut(); // ❌ Hilangkan loading jika validasi gagal
+});
+
+// ✅ Tambahkan event listener untuk menghilangkan loading jika berhasil
+Livewire.on("updateSuccess", () => {
+    console.log("Update sukses, menutup loading screen.");
+    $("#loading-screen").fadeOut(); // ✅ Hilangkan loading jika sukses
 });
