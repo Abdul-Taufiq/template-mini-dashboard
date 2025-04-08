@@ -22,7 +22,7 @@
                     </label>
                 </p>
                 <input class="form-input" type="password" placeholder="Enter your password" id="password"
-                    name="password" required autocomplete="current-password">
+                    name="password" required autocomplete="off">
             </label>
 
             <div class="form-group mb-2">
