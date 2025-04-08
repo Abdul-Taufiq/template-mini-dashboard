@@ -47,9 +47,11 @@
                                     <picture>
                                         <img src="{{ Auth::user()->profile_image != null
                                             ? asset('images/profile_image/' . Auth::user()->profile_image)
-                                            : asset('template/img/avatar/avatar-illustrated-02.webp') }}"
+                                            : (Auth::user()->UserDetails->gender == 'Laki-laki'
+                                                ? asset('template/img/avatar/avatar-illustrated-02.webp')
+                                                : asset('template/img/avatar/avatar-illustrated-01.webp')) }}"
                                             alt="Image Profile"
-                                            style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;  border: 1px solid rgb(161, 161, 161)">
+                                            style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover; border: 1px solid rgb(161, 161, 161)">
                                     </picture>
                                 </span>
                             </button>

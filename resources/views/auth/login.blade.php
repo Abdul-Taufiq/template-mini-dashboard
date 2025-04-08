@@ -2,6 +2,14 @@
 @yield('header')
 
 <main class="page-center">
+    {{-- loading screen --}}
+    <div id="loading-screen"
+        style="display: none; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; background: #000000bd;z-index: 9999; top: 0; left: 0;">
+        <div
+            style="display: flex; margin: auto; width: 100%; height: 100%; justify-content: center; align-items: center;">
+            <img style="width: 150px;" src="{{ asset('images/error_image/Loading Screen 2.gif') }}" alt="Loading...">
+        </div>
+    </div>
     <article class="sign-up" style="width: 380px;">
         <h1 class="sign-up__title">Welcome back!</h1>
         <p class="sign-up__subtitle">Sign in to your account to continue</p>

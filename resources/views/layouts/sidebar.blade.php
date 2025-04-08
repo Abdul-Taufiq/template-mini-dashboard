@@ -26,7 +26,7 @@
 
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>Posts
+                        <span class="newicon fa-duotone fa-solid fa-user-group" aria-hidden="true"></span>Master User
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
                             <span class="icon arrow-down" aria-hidden="true"></span>
@@ -34,10 +34,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="posts.html">All Posts</a>
+                            <a href="{{ route('master-user.index') }}">Manage User</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Add new post</a>
+                            <a href="new-post.html">Show All Activity</a>
                         </li>
                     </ul>
                 </li>
@@ -87,18 +87,32 @@
             </ul>
         </div>
     </div>
+
+    {{-- side footer --}}
     <div class="sidebar-footer">
         <a href="{{ route('profile.index') }}" class="sidebar-user">
-            <span class="sidebar-user-img">
+            <span class="sidebar-user-img" style="background-color: rgb(240, 240, 240);">
                 <picture>
                     <img src="{{ Auth::user()->profile_image != null
                         ? asset('images/profile_image/' . Auth::user()->profile_image)
-                        : asset('template/img/avatar/avatar-illustrated-02.webp') }}"
-                        alt="Image Profile" style="width: 40px; height: 40px; object-fit: cover;">
+                        : (Auth::user()->UserDetails->gender == 'Laki-laki'
+                            ? asset('template/img/avatar/avatar-illustrated-02.webp')
+                            : asset('template/img/avatar/avatar-illustrated-01.webp')) }}"
+                        alt="Image Profile" style="width: 40px; height: 40px; object-fit: cover; ">
                 </picture>
             </span>
             <div class="sidebar-user-info">
-                <span class="sidebar-user__title">{{ Auth::user()->nama }}</span>
+                @php
+                    function shortenName($name, $maxLength = 9)
+                    {
+                        if (strlen($name) > $maxLength) {
+                            $shortened = substr($name, 0, $maxLength) . '...';
+                            return $shortened;
+                        }
+                        return $name;
+                    }
+                @endphp
+                <span class="sidebar-user__title">{{ shortenName(Auth::user()->nama) }}</span>
                 <span class="sidebar-user__subtitle">{{ Auth::user()->jabatan }}</span>
             </div>
         </a>

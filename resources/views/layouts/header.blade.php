@@ -12,19 +12,42 @@
     {{-- bootsrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="{{ asset('template/css/style.min.css') }}">
 
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{{ asset('template/css/style.min.css') }}">
+    <link href="{{ asset('template/css/animate.css') }}" rel="stylesheet">
     {{-- logo --}}
     <link rel="shortcut icon" href="{{ asset('images/logo-rounded.png') }}">
     <link rel="icon" href="{{ asset('images/logo-rounded.png') }}">
 
     {{-- for livewire --}}
     @stack('styles')
+
+    <style>
+        .newicon {
+            margin-left: 5px;
+            margin-right: 12px;
+        }
+
+        .btn-aksi {
+            width: 25px;
+            height: 25px;
+            padding: 0px;
+        }
+
+        .rotate-y {
+            animation: rotateY 0.5s linear;
+        }
+
+        @keyframes rotateY {
+            to {
+                transform: rotateY(180deg);
+            }
+        }
+    </style>
 
 </head>

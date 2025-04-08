@@ -66,7 +66,8 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 {{-- <button type="button" id="simpanAkun" class="btn btn-primary"
                     wire:click="confirmUpdateAkun">Update</button> --}}
-                <button type="button" id="simpanAkun" class="btn btn-primary">Update</button>
+                <button type="button" id="simpanAkun" class="btn btn-primary"><i class="fa-regular fa-floppy-disk"></i>
+                    Update</button>
             </div>
         </form>
     </div>

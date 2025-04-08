@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->enum('role', ['admin', 'manager']);
+            $table->enum('role', ['admin', 'super admin']);
             $table->string('jabatan', 25);
             $table->string('nama');
             $table->string('username')->unique();
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->enum('is_active', ['active', 'not_active']);
+            $table->enum('is_deleted', ['false', 'true', 'permanent']);
             $table->string('profile_image', 100)->nullable();
             $table->timestamps();
         });
@@ -41,6 +42,19 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        // detail users
+        Schema::create('user_detail', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('nik', 16);
+            $table->string('place', 30);
+            $table->date('birth_date');
+            $table->enum('gender', ['Laki-laki', 'Perempuan']);
+            $table->string('address', 255);
+            $table->string('phone_number', 20)->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -48,6 +62,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('user_detail');
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');

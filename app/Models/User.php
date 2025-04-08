@@ -23,10 +23,11 @@ class User extends Authenticatable
         'nama',
         'username',
         'password_ori',
-        'email',
         'password',
+        'email',
         'is_active',
         'profile_image',
+        'is_deleted'
     ];
 
     /**
@@ -55,5 +56,13 @@ class User extends Authenticatable
     public function UserDetails()
     {
         return $this->hasOne(UserDetail::class, 'user_id', 'id');
+    }
+
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('nama', 'like', '%' . $search . '%')
+            ->orWhere('email', 'like', '%' . $search . '%')
+            ->orWhere('role', 'like', '%' . $search . '%');
     }
 }

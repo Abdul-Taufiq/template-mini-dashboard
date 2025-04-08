@@ -34,11 +34,13 @@
                 <div class="card-body">
                     <center>
                         <div class="rounded-circle"
-                            style="background-color: rgb(184, 184, 184); max-width: 200px; width: 200px; display: flex;  border: 1px solid rgb(161, 161, 161);">
+                            style="background-color: rgb(240, 240, 240); max-width: 200px; width: 200px; display: flex;  border: 1px solid rgb(161, 161, 161);">
                             <img id="image"
                                 src="{{ Auth::user()->profile_image != null
                                     ? asset('images/profile_image/' . Auth::user()->profile_image)
-                                    : asset('template/img/avatar/avatar-illustrated-02.webp') }}"
+                                    : (Auth::user()->UserDetails->gender == 'Laki-laki'
+                                        ? asset('template/img/avatar/avatar-illustrated-02.webp')
+                                        : asset('template/img/avatar/avatar-illustrated-01.webp')) }}"
                                 alt="Image Profile" class="w-100"
                                 style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
                         </div>
@@ -92,6 +94,13 @@
                             <td>:</td>
                             <td>
                                 {!! !empty($user->nama) ? $user->nama : '<i>Not Available</i>' !!}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Jabatan (Role)</th>
+                            <td>:</td>
+                            <td>
+                                {!! !empty($user->role) ? $user->jabatan . ' (' . $user->role . ')' : '<i>Not Available</i>' !!}
                             </td>
                         </tr>
                         <tr>

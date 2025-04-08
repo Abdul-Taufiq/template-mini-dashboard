@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="form-group">
-                            <label for="address">address</label>
+                            <label for="address">Address</label>
                             <textarea type="text" class="form-control" id="address" name="address" wire:model="address" required></textarea>
                             @error('address')
                                 <span class="text-danger">{{ $message }}</span>
@@ -95,7 +95,8 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 {{-- <button type="button" id="simpan" class="btn btn-primary" wire:click="confirmUpdate">Update</button> --}}
-                <button type="button" id="simpan" class="btn btn-primary">Update</button>
+                <button type="button" id="simpan" class="btn btn-primary"><i class="fa-regular fa-floppy-disk"></i>
+                    Update</button>
             </div>
         </form>
     </div>
