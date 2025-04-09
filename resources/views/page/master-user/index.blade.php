@@ -43,12 +43,14 @@
                         </div>
                         <div class="col-12 col-md-6 mb-2 mb-md-0 d-flex justify-content-center">
                             <div class="btn-group">
-                                <button id="btn-excel" class="btn btn-sm btn-secondary">
+                                <a href="{{ url('export-excel/master-user') }}" id="btn-excel"
+                                    class="btn btn-sm btn-secondary" target="_blank">
                                     <i class="fa-solid fa-download"></i> Export to Excel
-                                </button>
-                                <button id="btn-pdf" class="btn btn-sm btn-secondary">
+                                </a>
+                                <a href="{{ url('export-pdf/master-user') }}" id="btn-pdf"
+                                    class="btn btn-sm btn-secondary" target="_blank">
                                     <i class="fa-solid fa-download"></i> Export to PDF
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 text-end">

@@ -58,4 +58,6 @@ Route::middleware(['auth'])->group(function () {
     // User
     Route::resource('master-user', MasterUserController::class);
     Route::get('/master-user-deleted', [MasterUserController::class, 'deleted']);
+    Route::get('export-excel/master-user', [MasterUserController::class, 'exportExcel']);
+    Route::get('export-pdf/master-user', [MasterUserController::class, 'exportPdf']);
 });
